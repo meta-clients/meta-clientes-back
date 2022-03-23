@@ -24,6 +24,8 @@ router.register(r'clientes', ClientViewSet)
 router.register(r'children', ChieldrenViewSet)
 
 urlpatterns = [
+    path('auth/', include('djoser.urls')),
+    path('auth/token/', include('djoser.urls.jwt')),
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls)
 ]
